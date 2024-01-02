@@ -1,0 +1,85 @@
+-- MYSQL SQL Syntax
+-- create a database
+-- CREATE DATABASE bookstore2_db;
+
+-- deleting database:
+-- DROP DATABASE bookstore2_db
+
+--varchar means can hold data of any type
+
+--creating tables
+CREATE TABLE customers(
+    customerName VARCHAR(50),
+    phoneNumber INT  
+    
+);
+
+CREATE TABLE students(
+    student_id INT,
+    name VARCHAR(50),
+    email VARCHAR(50)
+);
+
+-- modifying databases
+
+--adding columns
+ALTER TABLE students 
+ADD age INT;
+
+ALTER TABLE students
+ADD country VARCHAR(50);
+
+ALTER TABLE students
+ADD nationality VARCHAR(100);
+
+-- deleting columns
+ALTER TABLE students DROP nationality;
+
+--resizing column
+--ALTER TABLE students MODIFY country VARCHAR(100);
+
+--Inserting rows
+INSERT INTO students(student_id, name, email) VALUES(
+    150, "romz", "rom@20"
+);
+
+INSERT INTO students(student_id, name, email) 
+VALUES(45, "mom", "rom@6"), (55, "data", "67");
+
+--SHOW EXISTING DATA
+-- * return all columns from within that table
+--SELECT * FROM students;
+
+--SELECT name FROM students;
+--SELECT name, email FROM students;
+
+--transfering data from one table to another
+INSERT INTO customers(customerName) SELECT name FROM students;
+
+--show this insertion
+--SELECT customerName FROM customers;
+
+--updating info
+UPDATE students 
+SET email = 'fool', name = 'hehe'
+WHERE student_id = 150; -- specific column value
+
+--SELECT * FROM students;
+
+--deleting records
+DELETE FROM students where email = 'fool';
+--SELECT * FROM students
+
+--DELETING ALL RECORDS
+--DELETE FROM students
+
+
+
+
+
+
+
+
+
+
+
