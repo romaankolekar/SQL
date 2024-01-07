@@ -1,0 +1,55 @@
+-- Operators --
+--SELECT 10 + 15; 
+
+--SELECT 10 - 25;
+
+--SELECT 5 * 5;
+
+--SELECT 100 % 10
+
+CREATE TABLE money(
+    id INT,
+    name VARCHAR(100),
+    salary INT    
+);
+
+INSERT INTO money(id,name,salary)
+VALUES(1,"Carl",18000), (2,"Mark",24000),
+(3,"Jack",24000), (4,"John",18000), (5,"Simon",30000);
+
+--SELECT * FROM money;
+
+-- adds 500 dollars to each salary
+--SELECT salary + 500 FROM money;
+
+-- deduct 500 dollars to each salary
+--SELECT salary - 500 FROM money;
+
+--doubling salary
+--SELECT salary * 2 FROM money;
+
+--get monthly salary
+--SELECT salary / 12 FROM money;
+
+--even or odd id
+--SELECT id % 2 FROM money;
+--------------------------------------
+--Comparison Operators
+--filter data
+--include data
+--exclube data
+
+-- wants employees with salary 1800 per year
+--SELECT * FROM money WHERE salary = 18000;
+
+--which employee receive salary < 24000
+--SELECT * FROM money WHERE salary < 24000;
+
+--SELECT * FROM money WHERE salary <= 24000;
+
+--SELECT * FROM money WHERE salary >= 24000;
+
+--not equal to 24000
+--SELECT * FROM money WHERE salary <> 24000;
+
+--------------------------------------
