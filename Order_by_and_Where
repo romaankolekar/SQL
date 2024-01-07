@@ -1,0 +1,98 @@
+--Order by Clause
+--sort data in ascending/descending order
+--sorts data in ascending order by default
+
+CREATE TABLE student(
+    ID INT,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    date_of_birth VARCHAR(100),
+    nationality VARCHAR(100)
+);
+
+INSERT INTO student(ID, first_name, last_name, date_of_birth, nationality)
+VALUES (1, "John", "Murphy", "1999-02-01", "US"),
+ (2, "Sandra", "Hauge", "2000-06-20", "US"),
+ (3, "Jerry", "Martin", "2000-03-30", "Australia"),
+ (4, "Heather", "Dawson", "1999-08-21", "UK"),
+ (5, "Ryan", "Egan", "2000-04-30", "China");
+
+--SELECT * FROM student;
+
+-- Implementing Order By
+
+--sorting nationality in alphabetical order
+--SELECT ID, first_name, last_name, nationality
+--FROM student
+--ORDER BY nationality ASC;
+
+--Descending order sort example
+--SELECT ID, first_name, last_name, nationality
+--FROM student
+--ORDER BY nationality DESC;
+
+--youngest to oldest and alphabetical nationality
+--SELECT *
+--FROM student
+--ORDER BY nationality ASC, date_of_birth DESC;
+
+-----------------------------------------------------
+
+--WHERE CLAUSE
+--filter and retrieve records that meet a specific condition
+
+
+CREATE TABLE admin(
+    ID INT,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    date_of_birth VARCHAR(100),
+    country VARCHAR(100),
+    faculty VARCHAR(100)
+);
+
+INSERT INTO admin(ID, first_name, last_name, date_of_birth, country, faculty)
+VALUES (1, "John", "Murphy", "1999-02-01", "US", "Science"),
+ (2, "Sandra", "Hauge", "2000-06-20", "US", "Science"),
+ (3, "Jerry", "Martin", "2000-03-30", "Australia", "Science"),
+ (4, "Heather", "Dawson", "1999-08-21", "UK", "Science"),
+ (5, "Ryan", "Egan", "2010-04-10", "China", "Science"),
+(6, "James", "Jones", "2010-02-15", "UK", "Engineering"),
+(7, "George", "Stuart", "2010-02-15", "Australia","Engineering"),
+(8, "Anne", "Jones", "2010-05-30", "Australia", "Engineering");
+
+--SELECT * FROM admin;
+
+
+--WHERE CLAUSE
+
+--filter: need engineering dept.
+
+--SELECT *
+--FROM admin
+--WHERE faculty = "Engineering";
+
+
+-- filter records for age range
+--SELECT *
+--FROM admin
+--WHERE date_of_birth BETWEEN '2010-01-01' AND '2010-06-30';
+
+
+--specify a pattern
+--SELECT *
+--FROM admin
+--WHERE faculty LIKE 'Sc%'; --percentage is wildcard char any number of chars (0, 1, or any number of chars)
+-- only want one char? use this: _
+
+--specific locations: multiple possible values
+SELECT *
+FROM admin
+WHERE country IN ('US', 'UK');
+
+--all of these operations can be used in update and delete (from CRUD) not just the where clause
+
+
+
+
+
